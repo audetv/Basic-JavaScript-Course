@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4, 5</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    /**
+     * Сложение a и b
+     * @param {number} a - Слагаемое
+     * @param {number} b - Слагаемое
+     * @returns {number} - Сумма
+     */
+    function sum(a, b) {
+        return a + b;
+    }
+
+    /**
+     * Вычитание a и b
+     * @param {number} a - Уменьшаемое
+     * @param {number} b - Вычитаемое
+     * @returns {number} - Разность
+     */
+    function diff(a, b) {
+        return a - b;
+    }
+
+    /**
+     * Умножение a и b
+     * @param {number} a - Множитель
+     * @param {number} b - Множитель
+     * @returns {number} - Произведение
+     */
+    function multiplication(a, b) {
+        return a * b;
+    }
+
+    /**
+     * Деление a и b
+     * @param a - Делимое
+     * @param b  - Делитель
+     * @returns {number} - Частное
+     */
+    function division(a, b) {
+        return a / b;
+    }
+
+    /**
+     * Функция реализующая основные 4 арифметические операции (+, -, /, *) в виде функций с двумя
+     параметрами a и b
+     * @param {number} a
+     * @param {number} b
+     * @param {string} operation - Возможные значения "+", "-", "*", "/"
+     * @returns {number}
+     */
+    let mathOperation = function (a, b, operation) {
+        switch (operation) {
+            case "+":
+                return sum(a, b);
+            case "-":
+                return diff(a, b);
+            case "*":
+                return multiplication(a, b);
+            case "/":
+                return division(a, b);
+            default:
+                throw new Error(`Операция ${operation} не поддерживается.`);
+        }
+    }
+
+    let a = 10;
+    let b = 2.5;
+
+    console.log(mathOperation(a, b, "/"));
+
+</script>
+</body>
+</html>
