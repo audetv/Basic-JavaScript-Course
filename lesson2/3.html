@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    let a = -1;
+    let b = 2;
+
+    /**
+     * по идее мы уже проверили в первом условии, что а и б оба положительные, а во втором,
+     * что а и б оба отрицательные, т.е первые два условия не выполнятся в том случае, если а и б разных знаков,
+     * хотя если бы не было первых 2х условий, то можно проверку на разные знаки сделать умножением a*b
+     * if (a * b < 0) {
+     *     console.log(a + b);
+     * }
+     */
+    if (a >= 0 && b >= 0) {
+        console.log(a - b);
+    } else if (a < 0 && b < 0) {
+        console.log(a * b);
+    } else {
+        console.log(a + b);
+    }
+
+</script>
+</body>
+</html>
