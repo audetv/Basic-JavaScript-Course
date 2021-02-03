@@ -49,6 +49,7 @@
             })
         });
 
+        //сначала сделал с циклом, потом сделал рекурссивный вызов
         // function addGoldenClass(el) {
         //     while (true) {
         //         el.classList.add(goldenClass);
@@ -75,14 +76,15 @@
             el.classList.add(goldenClass);
             if (el.previousElementSibling !== null && el.previousElementSibling.tagName === 'I') {
                 el = el.previousElementSibling;
-                addGoldenClass(el);
+                 return addGoldenClass(el);
             }
         }
+
         function removeGoldenClass(el) {
             el.classList.remove(goldenClass);
             if (el.previousElementSibling !== null && el.previousElementSibling.tagName === 'I') {
                 el = el.previousElementSibling;
-                addGoldenClass(el);
+                return removeGoldenClass(el);
             }
         }
     </script>
