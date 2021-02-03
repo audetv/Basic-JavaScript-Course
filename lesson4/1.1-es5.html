@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1.1 ES5 style</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    function Product(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    Product.prototype.make25PercentDiscount = function () {
+        this.price = this.price - (this.price / 100 * 25);
+    };
+
+    let product = new Product('Product', 300);
+    product.make25PercentDiscount();
+
+    console.log(product);
+
+</script>
+</body>
+</html>
