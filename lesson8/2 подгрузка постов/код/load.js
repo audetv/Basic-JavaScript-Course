@@ -1,8 +1,8 @@
 'use strict';
 
 // 1. Получите ссылку на .scrollCheck
-let scrollCheck = ;
-
+let scrollCheck = document.querySelector('.scrollCheck');
+console.log(scrollCheck.getBoundingClientRect());
 /**
  * Инициализация. При открытии страницы вставляем несколько постов
  * на страницу 
@@ -11,7 +11,8 @@ function init() {
     // 4. Если условие истинно, то вызывайте insertPosts и рекурсивно вызывайте
     // init.
     if (window.innerHeight === document.body.offsetHeight) {
-        
+
+        insertPosts();
     }
 }
 init();
@@ -19,7 +20,7 @@ init();
 document.addEventListener('scroll', function(event) {
     if (scrollCheck.getBoundingClientRect().top <= window.innerHeight) {
         // 5. Если условие истинно вызывайте insertPosts.
-        
+        insertPosts();
     }
 });
 
@@ -31,6 +32,10 @@ function insertPosts() {
     // разметку, возвращаемую getPostMarkup.
     // 3.1 в getPostMarkup в качестве аргумента передавайте счетчик цикла
     let postsMarkup = '';
+    console.log('here')
+    let counter = 1;
+    postsMarkup = getPostMarkup(1);
+    scrollCheck.insertAdjacentHTML('beforebegin', postsMarkup);
     
     // 3.2 Перед scrollCheck вставьте записанную в postsMarkup разметку
     
